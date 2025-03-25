@@ -38,9 +38,9 @@ void loop() {
     if (distance <= 20) {  
         Stop();  // Stop motors if obstacle is within 20 cm
     } else if (rightDetected && leftDetected) {  
-        Stop();  // If both IR sensors detect something → Stop  
+        allMotorsOn();  // If both IR sensors detect something → Move forward  
     } else if (!rightDetected && !leftDetected) {  
-        allMotorsOn();  // If both IR sensors detect nothing → Move forward  
+        Stop();  // If both IR sensors detect nothing → Stop
     } else if (!leftDetected) {  
         rightMotorsOn();  // If only the left IR sensor detects nothing → Right-side motors work  
     } else if (!rightDetected) {  
